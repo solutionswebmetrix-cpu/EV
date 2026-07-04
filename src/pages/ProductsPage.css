@@ -1,0 +1,26 @@
+.products-page {
+  padding-top: 100px;
+}
+
+.products-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--deep-navy) 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.products-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.products-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 640px) {
+  .products-hero h1 {
+    font-size: 2.2rem;
+  }
+}

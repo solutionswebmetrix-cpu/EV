@@ -1,0 +1,220 @@
+.dealership-page {
+  padding-top: 0;
+}
+
+.dealership-intro-section,
+.dealership-benefits-section,
+.dealership-support-section,
+.dealership-process-section,
+.dealership-requirements-section,
+.dealership-faq-section,
+.dealership-cta-section {
+  padding: 5rem 2rem;
+}
+
+.dealership-intro-section {
+  background: #f8fafc;
+}
+
+.dealership-intro-grid,
+.support-grid,
+.requirements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.dealership-media-card,
+.support-media-card,
+.requirements-card,
+.dealership-content-card,
+.benefit-card,
+.step-card,
+.stat-card,
+.faq-item,
+.dealership-cta-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+}
+
+.dealership-media-card img,
+.support-media-card img {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+}
+
+.dealership-content-card,
+.support-copy,
+.requirements-card,
+.dealership-cta-card {
+  padding: 2rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--electric-green);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.dealership-content-card h2,
+.section-heading h2,
+.support-copy h2,
+.requirements-card h2,
+.dealership-cta-card h2 {
+  font-size: 2rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.dealership-content-card p,
+.support-copy p,
+.requirements-card p,
+.benefit-card p,
+.step-card p,
+.stat-card p,
+.faq-answer p {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.dealership-content-card ul,
+.support-copy ul,
+.requirements-card ul {
+  padding-left: 1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.benefit-grid,
+.steps-grid,
+.stats-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.benefit-card,
+.step-card,
+.stat-card {
+  padding: 1.5rem;
+}
+
+.benefit-icon,
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--electric-green);
+  margin-bottom: 0.6rem;
+}
+
+.benefit-card h3,
+.step-card h3,
+.stat-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.stats-card-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-question {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--navy);
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.faq-answer {
+  padding: 0 1rem 1rem;
+}
+
+.dealership-cta-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--navy), #16365a);
+  color: white;
+}
+
+.dealership-cta-card .eyebrow {
+  color: var(--electric-green);
+}
+
+.dealership-cta-card h2 {
+  color: white;
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--electric-green), var(--electric-blue));
+  color: var(--navy);
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .dealership-intro-grid,
+  .support-grid,
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-grid,
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dealership-intro-section,
+  .dealership-benefits-section,
+  .dealership-support-section,
+  .dealership-process-section,
+  .dealership-requirements-section,
+  .dealership-faq-section,
+  .dealership-cta-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .benefit-grid,
+  .steps-grid,
+  .stats-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dealership-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

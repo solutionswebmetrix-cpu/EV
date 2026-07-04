@@ -1,0 +1,49 @@
+.gallery-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--deep-navy) 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 0;
+}
+
+.gallery-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gallery-intro {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.gallery-intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--navy);
+}
+
+.gallery-intro p {
+  font-size: 1.1rem;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .gallery-hero h1 {
+    font-size: 2.2rem;
+  }
+  .gallery-intro h2 {
+    font-size: 1.8rem;
+  }
+}

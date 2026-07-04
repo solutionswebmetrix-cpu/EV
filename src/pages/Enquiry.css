@@ -1,0 +1,149 @@
+.enquiry-page {
+  padding-top: 100px;
+}
+
+.enquiry-hero {
+  background: linear-gradient(135deg, var(--electric-green) 0%, var(--electric-blue) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--navy);
+}
+
+.enquiry-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.enquiry-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.enquiry-content {
+  padding: 5rem 2rem;
+}
+
+.enquiry-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+}
+
+.enquiry-info h2,
+.enquiry-form-section h2 {
+  font-size: 2rem;
+  color: var(--navy);
+  margin-bottom: 2rem;
+}
+
+.benefits-list {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.benefits-list li {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.quick-contact {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--deep-navy) 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--white);
+}
+
+.quick-contact h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.phone-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--electric-green), var(--electric-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.enquiry-form {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--electric-green);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--electric-green), var(--electric-blue));
+  border: none;
+  border-radius: 10px;
+  color: var(--navy);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .enquiry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

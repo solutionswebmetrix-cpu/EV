@@ -1,0 +1,333 @@
+.about-page {
+  padding-top: 100px;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--deep-navy) 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about-overview {
+  padding: 5rem 2rem;
+}
+
+.overview-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.overview-text h2 {
+  font-size: 2.5rem;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+
+.overview-text p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.overview-visual {
+  width: 100%;
+}
+
+.overview-image-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  min-height: 440px;
+}
+
+.overview-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.overview-image-frame:hover .overview-image,
+.overview-image:hover {
+  transform: scale(1.04);
+}
+
+.about-mission-vision {
+  padding: 5rem 2rem;
+  background: #f8fafc;
+}
+
+.mv-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.mv-card {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.mv-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mv-card h3 {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+
+.mv-card p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.about-journey {
+  padding: 5rem 2rem;
+}
+
+.about-journey h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--navy);
+  margin-bottom: 3rem;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--electric-green), var(--electric-blue));
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+.timeline-year {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--electric-green), var(--electric-blue));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-right: 40px;
+  max-width: 350px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: 0;
+  margin-left: 40px;
+}
+
+.timeline-content h4 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: var(--text-light);
+}
+
+.about-values {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--deep-navy) 100%);
+  color: var(--white);
+}
+
+.about-values h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.values-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--electric-green);
+}
+
+.value-card p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.about-innovation {
+  padding: 5rem 2rem;
+  background: #ffffff;
+}
+
+.innovation-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.innovation-text h2 {
+  font-size: 2.5rem;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+
+.innovation-text p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.about-customer {
+  padding: 5rem 2rem;
+  background: #f8fafc;
+}
+
+.customer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.customer-text h2 {
+  font-size: 2.5rem;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+
+.customer-text p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 1024px) {
+  .overview-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .mv-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    padding-left: 70px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .timeline-year {
+    left: 30px;
+  }
+
+  .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-overview {
+    padding: 3rem 1rem;
+  }
+
+  .overview-content {
+    gap: 1.25rem;
+  }
+
+  .overview-image-frame,
+  .overview-image {
+    min-height: 260px;
+    border-radius: 16px;
+  }
+
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+}

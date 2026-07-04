@@ -1,0 +1,52 @@
+.technology {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--deep-navy) 100%);
+  color: var(--white);
+}
+
+.technology .section-header h2 {
+  color: var(--white);
+}
+
+.technology .section-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tech-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.tech-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.tech-name {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--white);
+}
+
+.tech-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
