@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { products as productData } from '../data'
-import fallbackImage from '../assets/Product/Chopper.png'
-import './Products.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { products as productData } from '../data';
+import fallbackImage from '../assets/Product/Chopper.png';
+import './Products.css';
 
 const sampleProducts = [
   {
@@ -25,29 +25,31 @@ const sampleProducts = [
 const getProductDescription = (product) => {
   const base = product.cardDescription || product.shortDescription || product.description || 'Premium AeroVolt electric scooter designed for modern urban commuting.';
   const words = base.trim().split(/\s+/);
+  const maxWords = 40;
 
-  if (words.length >= 60) {
+  if (words.length <= maxWords) {
     return base;
   }
 
-  return `${base} With a ${product.range || 'strong'} range, ${product.topSpeed || 'efficient'} top speed, and ${product.chargingTime || 'quick'} charging, this AeroVolt scooter is crafted for riders who want reliable everyday performance, premium comfort, and modern EV technology in a single package.`;
+  return `${words.slice(0, maxWords).join(' ')}…`;
 };
 
 const Products = () => {
   const catalogProducts = productData?.length ? productData : sampleProducts;
-  const [activeCategory, setActiveCategory] = useState('all')
-  const categories = ['all', ...new Set(catalogProducts.map((p) => p.category))]
+  const [activeCategory, setActiveCategory] = useState('all');
+  const categories = ['all', ...new Set(catalogProducts.map((p) => p.category))];
 
   const filteredProducts = activeCategory === 'all'
     ? catalogProducts
-    : catalogProducts.filter((p) => p.category === activeCategory)
+    : catalogProducts.filter((p) => p.category === activeCategory);
 
   return (
     <section className="products" id="products">
       <div className="container">
         <div className="section-header">
-          <h2>Our Premium Collection</h2>
-          <p>Discover the perfect electric vehicle for your lifestyle</p>
+          <p className="eyebrow">Premium Electric Mobility</p>
+          <h2>Discover the AeroVolt Collection</h2>
+          <p>Explore a refined range of electric scooters crafted for style, performance, and everyday confidence.</p>
         </div>
 
         <div className="category-filters">
@@ -64,57 +66,71 @@ const Products = () => {
 
         <div className="products-grid">
           {filteredProducts.map((product, index) => (
-            <motion.div
+            <motion.article
               key={product.id}
               className="product-card"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              whileHover={{ y: -15, rotateY: 8, rotateX: 3 }}
-              style={{ transformStyle: "preserve-3d" }}
+              transition={{ duration: 0.45, delay: index * 0.04 }}
+              whileHover={{ y: -10, scale: 1.01 }}
             >
-              <div className="product-glow" style={{ background: `radial-gradient(circle at 50% 0%, ${product.accentColor}40, transparent 60%)` }}></div>
-              <div className="product-image">
+              <div className="product-media">
                 <img src={product.image} alt={product.name} />
-                <div className="product-category" style={{ background: `linear-gradient(135deg, ${product.accentColor}, ${product.accentColor}dd)` }}>{product.category}</div>
+                <div className="product-badge" style={{ background: `linear-gradient(135deg, ${product.accentColor}, ${product.accentColor}dd)` }}>
+                  {product.category}
+                </div>
               </div>
 
-              <div className="product-info">
-                <h3 className="product-name">{product.name}</h3>
-                <p className="product-description">{getProductDescription(product)}</p>
+              <div className="product-content">
+                <div>
+                  <h3 className="product-name">{product.name}</h3>
+                  <p className="product-description">{getProductDescription(product)}</p>
+                </div>
 
-                <div className="product-stats-grid">
-                  <div className="product-stat">
-                    <span className="product-stat-label">Range</span>
-                    <span className="product-stat-value">{product.range}</span>
+                <div className="spec-list">
+                  <div className="spec-item">
+                    <span className="spec-icon">↗</span>
+                    <div>
+                      <strong>Range</strong>
+                      <span>{product.range}</span>
+                    </div>
                   </div>
-                  <div className="product-stat">
-                    <span className="product-stat-label">Top Speed</span>
-                    <span className="product-stat-value">{product.topSpeed}</span>
+                  <div className="spec-item">
+                    <span className="spec-icon">⚡</span>
+                    <div>
+                      <strong>Top Speed</strong>
+                      <span>{product.topSpeed}</span>
+                    </div>
                   </div>
-                  <div className="product-stat">
-                    <span className="product-stat-label">Battery</span>
-                    <span className="product-stat-value">{product.battery}</span>
+                  <div className="spec-item">
+                    <span className="spec-icon">🔋</span>
+                    <div>
+                      <strong>Battery</strong>
+                      <span>{product.battery}</span>
+                    </div>
                   </div>
-                  <div className="product-stat">
-                    <span className="product-stat-label">Charging</span>
-                    <span className="product-stat-value">{product.chargingTime}</span>
+                  <div className="spec-item">
+                    <span className="spec-icon">⏱</span>
+                    <div>
+                      <strong>Charging</strong>
+                      <span>{product.chargingTime}</span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="product-actions">
+                <div className="product-action">
                   <Link to={`/products/${product.slug}`} className="btn-view">
                     View Details
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

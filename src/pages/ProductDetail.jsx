@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { products } from '../data'
-import PageBanner from '../components/PageBanner'
-import './ProductDetail.css'
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { products } from '../data';
+import PageBanner from '../components/PageBanner';
+import './ProductDetail.css';
 
 const ProductDetail = () => {
-  const { slug } = useParams()
-  const product = products.find(p => p.slug === slug)
-  const [activeFaq, setActiveFaq] = useState(null)
+  const { slug } = useParams();
+  const product = products.find((p) => p.slug === slug);
+  const [activeFaq, setActiveFaq] = useState(null);
+  const [activeImage, setActiveImage] = useState(product?.image || '');
+
+  useEffect(() => {
+    setActiveImage(product?.image || '');
+  }, [product?.slug]);
 
   if (!product) {
     return (
@@ -16,137 +21,139 @@ const ProductDetail = () => {
         <h1>Product Not Found</h1>
         <Link to="/products" className="btn-back">Back to Products</Link>
       </div>
-    )
+    );
   }
 
-  const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 4)
+  const relatedProducts = products.filter((p) => p.id !== product.id).slice(0, 4);
+
+  const getExtendedDescription = (item) => {
+    const base = item.description || item.shortDescription || 'Premium AeroVolt electric scooter crafted for modern riders.';
+    const words = base.trim().split(/\s+/);
+
+    if (words.length >= 90) {
+      return base;
+    }
+
+    return `${base} Designed for riders who expect premium comfort, intelligent technology, and dependable performance, this AeroVolt model brings elegant design, practical capability, and a refined everyday EV experience into one standout package.`;
+  };
 
   const faqs = [
     {
-      question: "What is the warranty period?",
+      question: 'What is the warranty period?',
       answer: `All ${product.name} models come with a standard ${product.warranty} warranty.`,
     },
     {
-      question: "How long does it take to charge?",
+      question: 'How long does it take to charge?',
       answer: `The ${product.name} takes approximately ${product.chargingTime} for a full charge.`,
     },
     {
-      question: "What is the range on a single charge?",
+      question: 'What is the range on a single charge?',
       answer: `The ${product.name} offers an impressive range of ${product.range} on a single charge.`,
     },
     {
-      question: "Is financing available?",
-      answer: "Yes, we offer flexible financing options through our partners. Contact us for more details.",
+      question: 'Is financing available?',
+      answer: 'Yes, we offer flexible financing options through our partners. Contact us for more details.',
     },
-  ]
+  ];
 
   const quickSpecs = [
-    { icon: "🔋", label: "Battery", value: product.battery },
-    { icon: "⚡", label: "Motor", value: product.motor },
-    { icon: "📏", label: "Range", value: product.range },
-    { icon: "🚀", label: "Top Speed", value: product.topSpeed },
-    { icon: "🔌", label: "Charging", value: product.chargingTime },
-    { icon: "🛑", label: "Brake", value: product.brakes },
-  ]
+    { icon: '🔋', label: 'Battery', value: product.battery },
+    { icon: '⚡', label: 'Motor', value: product.motor },
+    { icon: '↗', label: 'Range', value: product.range },
+    { icon: '🚀', label: 'Top Speed', value: product.topSpeed },
+    { icon: '⏱', label: 'Charging', value: product.chargingTime },
+    { icon: '🛑', label: 'Brake', value: product.brakes },
+  ];
 
   const technicalSpecs = [
-    { label: "Battery", value: product.battery },
-    { label: "Motor", value: product.motor },
-    { label: "Range", value: product.range },
-    { label: "Charging", value: product.chargingTime },
-    { label: "Brake", value: product.brakes },
-    { label: "Display", value: "Digital" },
-    { label: "Controller", value: "Smart Controller" },
-    { label: "Ground Clearance", value: "160 mm" },
-    { label: "Tyre", value: product.tyres },
-    { label: "Suspension", value: "Telescopic" },
-    { label: "Load Capacity", value: "150kg" },
-    { label: "Warranty", value: product.warranty },
-  ]
+    { label: 'Battery', value: product.battery },
+    { label: 'Motor', value: product.motor },
+    { label: 'Range', value: product.range },
+    { label: 'Charging', value: product.chargingTime },
+    { label: 'Brakes', value: product.brakes },
+    { label: 'Tyres', value: product.tyres },
+    { label: 'Display', value: 'Digital Console' },
+    { label: 'Controller', value: 'Smart Controller' },
+    { label: 'Ground Clearance', value: '160 mm' },
+    { label: 'Suspension', value: 'Telescopic' },
+    { label: 'Load Capacity', value: '150 kg' },
+    { label: 'Warranty', value: product.warranty },
+  ];
 
-  const featureCards = product.features.map((feature, idx) => ({
-    icon: "✓",
+  const featureCards = (product.features || []).map((feature) => ({
+    icon: '✓',
     title: feature,
-    description: "Premium quality with cutting-edge technology",
-  }))
+    description: 'Premium quality with cutting-edge EV technology',
+  }));
+
+  const galleryImages = product.gallery?.length ? product.gallery : [product.image];
 
   return (
     <div className="product-detail" style={{ '--accent-color': product.accentColor }}>
-      {/* Page Banner */}
       <PageBanner title={product.name} image={product.banner} />
 
-      {/* Section 1: Product Hero */}
       <section className="section hero-section">
         <div className="container">
-          <div className="hero-grid">
-            {/* Left: Image */}
+          <div className="detail-hero">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="image-wrapper"
+              className="image-showcase"
             >
-              <div className="product-image-card">
-                <img src={product.image} alt={product.name} className="product-main-image" />
+              <div className="main-image-card">
+                <img src={activeImage} alt={product.name} className="product-main-image" />
+              </div>
+
+              <div className="gallery-strip">
+                {galleryImages.map((image, idx) => (
+                  <button
+                    key={`${image}-${idx}`}
+                    type="button"
+                    className={`gallery-thumb ${activeImage === image ? 'active' : ''}`}
+                    onClick={() => setActiveImage(image)}
+                  >
+                    <img src={image} alt={`${product.name} view ${idx + 1}`} />
+                  </button>
+                ))}
               </div>
             </motion.div>
 
-            {/* Right: Details */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="details-wrapper"
+              className="details-panel"
             >
-              <h1 className="product-name">{product.name}</h1>
-              <p className="product-description">{product.shortDescription}</p>
+              <p className="eyebrow">AeroVolt Electric Scooter</p>
+              <h1 className="detail-title">{product.name}</h1>
+              <p className="detail-description">{getExtendedDescription(product)}</p>
 
-              <div className="overview-block">
-                <h3 className="block-title">Overview</h3>
-                <p className="overview-text">{product.description}</p>
-              </div>
-
-              <div className="key-features-block">
-                <h3 className="block-title">Key Features</h3>
-                <div className="key-features-grid">
-                  {product.features.map((feature, idx) => (
-                    <div key={idx} className="key-feature-item">
-                      <span className="checkmark" style={{ color: product.accentColor }}>✓</span>
-                      <span>{feature}</span>
+              <div className="quick-spec-grid">
+                {quickSpecs.map((spec, idx) => (
+                  <div key={idx} className="quick-spec-card">
+                    <span className="spec-icon">{spec.icon}</span>
+                    <div className="spec-info">
+                      <span className="spec-label">{spec.label}</span>
+                      <span className="spec-value">{spec.value}</span>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
 
-              <div className="quick-specs-block">
-                <h3 className="block-title">Specifications</h3>
-                <div className="quick-specs-grid">
-                  {quickSpecs.map((spec, idx) => (
-                    <div key={idx} className="quick-spec-card">
-                      <span className="spec-icon">{spec.icon}</span>
-                      <div className="spec-info">
-                        <div className="spec-label">{spec.label}</div>
-                        <div className="spec-value">{spec.value}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="cta-buttons">
-                <button className="btn book-now-btn">
-                  Book Now
-                </button>
-                <button className="btn download-btn">
-                  Download Brochure
-                </button>
+              <div className="cta-row">
+                <Link to="/enquiry" className="btn book-now-btn">
+                  Book Test Ride
+                </Link>
+                <Link to="/enquiry" className="btn download-btn">
+                  Enquire Now
+                </Link>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Features */}
       <section className="section features-section">
         <div className="container">
           <motion.h2
@@ -155,17 +162,17 @@ const ProductDetail = () => {
             viewport={{ once: true }}
             className="section-title"
           >
-            Features
+            Key Features
           </motion.h2>
-          <div className="features-grid">
+          <div className="feature-grid">
             {featureCards.map((feature, idx) => (
               <motion.div
                 key={idx}
                 className="feature-card"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.08 }}
+                transition={{ delay: idx * 0.05 }}
                 whileHover={{ y: -5 }}
               >
                 <span className="feature-card-icon" style={{ color: product.accentColor }}>{feature.icon}</span>
@@ -177,22 +184,33 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Section 3: Technical Specifications */}
       <section className="section specs-section">
         <div className="container">
           <h2 className="section-title">Technical Specifications</h2>
-          <div className="technical-specs-grid">
+          <div className="spec-table">
             {technicalSpecs.map((spec, idx) => (
-              <div key={idx} className="technical-spec-card">
-                <div className="tech-spec-label">{spec.label}</div>
-                <div className="tech-spec-value">{spec.value}</div>
+              <div key={idx} className="spec-row">
+                <span className="spec-label">{spec.label}</span>
+                <span className="spec-value">{spec.value}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQs */}
+      <section className="section gallery-section">
+        <div className="container">
+          <h2 className="section-title">Gallery</h2>
+          <div className="gallery-grid">
+            {galleryImages.map((image, idx) => (
+              <div key={`${image}-${idx}`} className="gallery-card">
+                <img src={image} alt={`${product.name} gallery ${idx + 1}`} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="faqs-section">
         <div className="container">
           <h2 className="section-title">Frequently Asked Questions</h2>
@@ -219,13 +237,12 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Enquiry Form */}
       <section className="enquiry-form-section">
         <div className="container">
           <div className="enquiry-box">
             <div className="enquiry-content">
               <h2>Interested in {product.name}?</h2>
-              <p>Get in touch with our team for more details and test ride booking</p>
+              <p>Get in touch with our team for more details and test ride booking.</p>
             </div>
             <Link to="/enquiry" className="btn-enquire-cta" style={{ background: `linear-gradient(135deg, var(--electric-green), var(--electric-blue))` }}>
               Book a Test Ride
@@ -234,7 +251,6 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Related Products */}
       <section className="related-products">
         <div className="container">
           <h2 className="section-title">Related Products</h2>
@@ -243,10 +259,10 @@ const ProductDetail = () => {
               <motion.div
                 key={related.id}
                 className="related-card"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ delay: idx * 0.08 }}
                 whileHover={{ y: -8 }}
               >
                 <img src={related.image} alt={related.name} />
@@ -263,7 +279,7 @@ const ProductDetail = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default ProductDetail
+export default ProductDetail;
