@@ -88,7 +88,17 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2025 AeroVolt by Priya Global. All rights reserved.</p>
+          <p className="copyright-text">
+            © 2026 AeroVolt. All Rights Reserved. | Designed by{' '}
+            <a
+              href="https://www.webmetrixsolutions.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="designer-link"
+            >
+              Webmetrix Solutions
+            </a>
+          </p>
           <div className="social-links">
             <a href="#" className="social-link">📘</a>
             <a href="#" className="social-link">📷</a>
