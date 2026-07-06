@@ -29,7 +29,11 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={`${slide}-${index}`}>
             <div className="hero-slide">
-              <img src={slide} alt={`AeroVolt banner ${index + 1}`} className="hero-slide-image" />
+              <img 
+                src={slide} 
+                alt={`AeroVolt banner ${index + 1}`} 
+                className="hero-slide-image"
+              />
             </div>
           </SwiperSlide>
         ))}

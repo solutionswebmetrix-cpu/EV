@@ -49,7 +49,7 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <PageBanner title="Contact Us" image={banner1} />
+      <PageBanner title="Contact Us" image={banner1} scale={0.9} />
 
       <section className="contact-section">
         <div className="container contact-section-grid">

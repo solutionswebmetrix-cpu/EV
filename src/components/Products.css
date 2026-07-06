@@ -108,8 +108,8 @@
   align-items: center;
   justify-content: center;
   height: 320px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e9eff7 100%);
-  padding: 1.1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f7fb 100%);
+  padding: 1.2rem;
 }
 
 .product-media img {
@@ -120,6 +120,7 @@
   object-fit: contain;
   object-position: center;
   display: block;
+  background: transparent;
   transition: transform 0.35s ease;
 }
 

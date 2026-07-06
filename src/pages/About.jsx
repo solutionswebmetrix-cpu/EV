@@ -24,7 +24,7 @@ const About = () => {
   return (
     <div className="about-page">
       {/* Page Banner */}
-      <PageBanner title="About AeroVolt" image={banner1} />
+      <PageBanner title="About AeroVolt" image={banner1} scale={0.9} />
 
       {/* Main About Section */}
       <section className="about-overview">

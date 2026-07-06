@@ -90,7 +90,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product-detail" style={{ '--accent-color': product.accentColor }}>
-      <PageBanner title={product.name} image={product.banner} />
+      <PageBanner title={product.name} image={product.banner} scale={0.9} />
 
       <section className="section hero-section">
         <div className="container">

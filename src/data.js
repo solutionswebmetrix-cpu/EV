@@ -7,7 +7,7 @@ import SupremeProBanner from './assets/Product/Supreme Pro banner.png';
 import NewSupreme from './assets/Product/New Supreme.png';
 import NewSupremeBanner from './assets/Product/New Supreme banner.png';
 import NewSupremePlus from './assets/Product/New Supreme +.png';
-import NewSupremePlusBanner from './assets/Product/New Supreme + banner.png';
+import NewSupremePlusBanner from './assets/Product/New Supreme +banner.png';
 import NewFusion from './assets/Product/New Fusion.png';
 import NewFusionBanner from './assets/Product/New Fusion banner.png';
 import Chopper from './assets/Product/Chopper.png';

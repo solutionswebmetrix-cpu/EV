@@ -7,7 +7,7 @@ import './ProductsPage.css';
 const ProductsPage = () => {
   return (
     <div className="products-page">
-      <PageBanner title="Our Products" image={banner2} />
+      <PageBanner title="Our Products" image={banner2} scale={0.9} />
       <Products />
     </div>
   );

@@ -2,10 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './PageBanner.css';
 
-const PageBanner = ({ title, image }) => {
+const PageBanner = ({ title, image, scale = 1 }) => {
   return (
     <section className="page-banner">
-      <img src={image} alt="" className="page-banner-image" />
+      <img 
+        src={image} 
+        alt="" 
+        className="page-banner-image"
+        style={{ transform: `scale(${scale})` }}
+      />
       <div className="page-banner-overlay">
         <div className="container">
           <motion.div
