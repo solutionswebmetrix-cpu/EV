@@ -1,28 +1,28 @@
-import ChopperZS from './assets/Product/Chopper ZS.png';
-import ChopperZSBanner from './assets/Product/Chopper ZS banner.png';
-import ChopperZSPlus from './assets/Product/Chopper ZS+.png';
-import ChopperZSPlusBanner from './assets/Product/Chopper ZS+ banner.png';
-import SupremePro from './assets/Product/Supreme Pro.png';
-import SupremeProBanner from './assets/Product/Supreme Pro banner.png';
-import NewSupreme from './assets/Product/New Supreme.png';
-import NewSupremeBanner from './assets/Product/New Supreme banner.png';
-import NewSupremePlus from './assets/Product/New Supreme +.png';
-import NewSupremePlusBanner from './assets/Product/New Supreme +banner.png';
-import NewFusion from './assets/Product/New Fusion.png';
-import NewFusionBanner from './assets/Product/New Fusion banner.png';
-import Chopper from './assets/Product/Chopper.png';
-import ChopperBanner from './assets/Product/Chopper banner.png';
-import NewSprint from './assets/Product/New Sprint.png';
-import NewSprintBanner from './assets/Product/New sprint banner.png';
+import ChopperZS from './assets/Product/Aero Chopper.png';
+import ChopperZSBanner from './assets/Product/Aero Chopper banner.png';
+import ChopperZSPlus from './assets/Product/Aero Chopper Plus.png';
+import ChopperZSPlusBanner from './assets/Product/Aero Chopper Plus banner.png';
+import SupremePro from './assets/Product/Aero Supreme Pro.png';
+import SupremeProBanner from './assets/Product/Aero Supreme Pro banner.png';
+import NewSupreme from './assets/Product/Aero Supreme.png';
+import NewSupremeBanner from './assets/Product/Aero Supreme banner.png';
+import NewSupremePlus from './assets/Product/Aero Supreme Plus.png';
+import NewSupremePlusBanner from './assets/Product/Aero Supreme Plus banner.png';
+import NewFusion from './assets/Product/Aero Plus.png';
+import NewFusionBanner from './assets/Product/Aero Plus banner.png';
+import Chopper from './assets/Product/Aero Chopper.png';
+import ChopperBanner from './assets/Product/Aero Chopper banner.png';
+import NewSprint from './assets/Product/Aero Sprint.png';
+import NewSprintBanner from './assets/Product/Aero Sprint banner.png';
 
 export const products = [
   {
     id: 1,
     slug: "chopper-zs",
     category: "High Speed Scooters",
-    name: "Chopper ZS",
+    name: "Aero Chopper",
     shortDescription: "Premium electric scooter with strong performance, long-range battery, and modern features for confident daily commuting.",
-    description: "Chopper ZS combines power, range, and smart safety in a sleek package. Its 2500W motor delivers strong acceleration, while the 3.0 kWh battery supports up to 130 km per charge. Dual disc brakes, tubeless tyres, and LED lighting keep the ride stable and secure.",
+    description: "Aero Chopper combines power, range, and smart safety in a sleek package. Its 2500W motor delivers strong acceleration, while the 3.0 kWh battery supports up to 130 km per charge. Dual disc brakes, tubeless tyres, and LED lighting keep the ride stable and secure.",
     range: "130 km",
     topSpeed: "70 km/h",
     battery: "3.0 kWh Lithium-ion",
@@ -42,9 +42,9 @@ export const products = [
     id: 2,
     slug: "chopper-zs-plus",
     category: "High Speed Scooters",
-    name: "Chopper ZS+",
+    name: "Aero Chopper Plus",
     shortDescription: "High-speed scooter with upgraded power, extended range, and refined comfort for everyday adventure.",
-    description: "Chopper ZS+ adds stronger acceleration and better efficiency for riders who want more from each trip. With a 3000W motor, 150 km range, and ABS brakes, it offers a balanced mix of speed, safety, and comfort.",
+    description: "Aero Chopper Plus adds stronger acceleration and better efficiency for riders who want more from each trip. With a 3000W motor, 150 km range, and ABS brakes, it offers a balanced mix of speed, safety, and comfort.",
     range: "150 km",
     topSpeed: "80 km/h",
     battery: "3.5 kWh Lithium-ion",
@@ -64,9 +64,9 @@ export const products = [
     id: 3,
     slug: "supreme-pro",
     category: "High Speed Scooters",
-    name: "Supreme Pro",
+    name: "Aero Supreme Pro",
     shortDescription: "Flagship model with premium styling, advanced tech, and strong performance for riders seeking the best.",
-    description: "Supreme Pro delivers a premium EV experience with robust performance and smart features. Its 3200W motor, 160 km range, and ABS braking system make it ideal for riders who want comfort, control, and standout design.",
+    description: "Aero Supreme Pro delivers a premium EV experience with robust performance and smart features. Its 3200W motor, 160 km range, and ABS braking system make it ideal for riders who want comfort, control, and standout design.",
     range: "160 km",
     topSpeed: "85 km/h",
     battery: "4.0 kWh Lithium-ion",
@@ -86,9 +86,9 @@ export const products = [
     id: 4,
     slug: "new-supreme",
     category: "High Speed Scooters",
-    name: "New Supreme",
+    name: "Aero Supreme",
     shortDescription: "Reliable daily commuter with smart design, comfortable handling, and efficient everyday performance.",
-    description: "New Supreme is built for smooth city commuting. With a 2000W motor, 120 km range, and practical safety features, it offers dependable performance without compromising on style or comfort.",
+    description: "Aero Supreme is built for smooth city commuting. With a 2000W motor, 120 km range, and practical safety features, it offers dependable performance without compromising on style or comfort.",
     range: "120 km",
     topSpeed: "65 km/h",
     battery: "2.8 kWh Lithium-ion",
@@ -108,9 +108,9 @@ export const products = [
     id: 5,
     slug: "new-supreme-plus",
     category: "High Speed Scooters",
-    name: "New Supreme+",
+    name: "Aero Supreme Plus",
     shortDescription: "Enhanced commuter scooter with extra comfort, stronger range, and useful everyday features.",
-    description: "New Supreme+ adds more range and convenience for riders who want a polished daily experience. Its 2500W motor, 140 km battery range, and reverse mode make it a practical choice for modern urban travel.",
+    description: "Aero Supreme Plus adds more range and convenience for riders who want a polished daily experience. Its 2500W motor, 140 km battery range, and reverse mode make it a practical choice for modern urban travel.",
     range: "140 km",
     topSpeed: "75 km/h",
     battery: "3.2 kWh Lithium-ion",
@@ -130,9 +130,9 @@ export const products = [
     id: 6,
     slug: "new-fusion",
     category: "High Speed Scooters",
-    name: "New Fusion",
+    name: "Aero Plus",
     shortDescription: "Stylish and efficient scooter designed for smart urban travel with dependable everyday performance.",
-    description: "New Fusion brings a modern look and practical performance together. Its 1800W motor, 110 km range, and quick charging make it a smart option for riders seeking balance, efficiency, and simplicity.",
+    description: "Aero Plus brings a modern look and practical performance together. Its 1800W motor, 110 km range, and quick charging make it a smart option for riders seeking balance, efficiency, and simplicity.",
     range: "110 km",
     topSpeed: "60 km/h",
     battery: "2.5 kWh Lithium-ion",
@@ -152,9 +152,9 @@ export const products = [
     id: 7,
     slug: "chopper",
     category: "Low Speed Scooters",
-    name: "Chopper",
+    name: "Aero Chopper Lite",
     shortDescription: "Compact and efficient city scooter for short trips, errands, and everyday commuting.",
-    description: "Chopper is ideal for city travel with a light frame, easy handling, and a practical range. Its 250W motor and 70 km battery range make it a simple, eco-friendly choice for daily use.",
+    description: "Aero Chopper Lite is ideal for city travel with a light frame, easy handling, and a practical range. Its 250W motor and 70 km battery range make it a simple, eco-friendly choice for daily use.",
     range: "70 km",
     topSpeed: "25 km/h",
     battery: "1.5 kWh Lithium-ion",
@@ -174,9 +174,9 @@ export const products = [
     id: 8,
     slug: "new-sprint",
     category: "Low Speed Scooters",
-    name: "New Sprint",
+    name: "Aero Sprint",
     shortDescription: "Agile and sporty low-speed scooter designed for quick urban rides with everyday practicality.",
-    description: "New Sprint offers a fun and efficient way to move around the city. With a 350W motor, 80 km range, and smart safety features, it is a reliable companion for daily errands and quick trips.",
+    description: "Aero Sprint offers a fun and efficient way to move around the city. With a 350W motor, 80 km range, and smart safety features, it is a reliable companion for daily errands and quick trips.",
     range: "80 km",
     topSpeed: "25 km/h",
     battery: "1.8 kWh Lithium-ion",

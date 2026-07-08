@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { products as productData } from '../data';
-import fallbackImage from '../assets/Product/Chopper.png';
+import fallbackImage from '../assets/Product/Aero Chopper.png';
 import './Products.css';
 
 const sampleProducts = [
   {
     id: 1,
-    slug: 'aerovolt-chopper',
-    category: 'City Scooters',
-    name: 'AeroVolt Chopper',
+    slug: 'aero-chopper',
+    category: 'High Speed Scooters',
+    name: 'Aero Chopper',
     shortDescription: 'A premium electric scooter designed for smooth city commuting with a lightweight frame, efficient battery performance, and stylish everyday practicality.',
     description: 'A premium electric scooter designed for smooth city commuting with a lightweight frame, efficient battery performance, and stylish everyday practicality. It delivers dependable range and comfort for daily riders seeking a modern EV experience.',
     range: '70 km',
@@ -25,13 +25,12 @@ const sampleProducts = [
 const getProductDescription = (product) => {
   const base = product.cardDescription || product.shortDescription || product.description || 'Premium AeroVolt electric scooter designed for modern urban commuting.';
   const words = base.trim().split(/\s+/);
-  const maxWords = 40;
 
-  if (words.length <= maxWords) {
+  if (words.length >= 70) {
     return base;
   }
 
-  return `${words.slice(0, maxWords).join(' ')}…`;
+  return `${base} Built for modern riders, this AeroVolt model brings dependable range, refined comfort, and intelligent EV technology together in one premium package.`;
 };
 
 const Products = () => {
@@ -48,8 +47,8 @@ const Products = () => {
       <div className="container">
         <div className="section-header">
           <p className="eyebrow">Premium Electric Mobility</p>
-          <h2>Discover the AeroVolt Collection</h2>
-          <p>Explore a refined range of electric scooters crafted for style, performance, and everyday confidence.</p>
+          <h2>Our Premium Collection</h2>
+          <p>Discover the perfect AeroVolt scooter for your daily ride, from urban commuting to high-performance travel.</p>
         </div>
 
         <div className="category-filters">
@@ -69,57 +68,42 @@ const Products = () => {
             <motion.article
               key={product.id}
               className="product-card"
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: index * 0.04 }}
               whileHover={{ y: -10, scale: 1.01 }}
             >
-              <div className="product-media">
+              <div className="product-glow" style={{ background: `radial-gradient(circle at 50% 0%, ${product.accentColor}40, transparent 60%)` }}></div>
+              <div className="product-image">
                 <img src={product.image} alt={product.name} />
-                <div className="product-badge" style={{ background: `linear-gradient(135deg, ${product.accentColor}, ${product.accentColor}dd)` }}>
-                  {product.category}
-                </div>
+                <div className="product-category" style={{ background: `linear-gradient(135deg, ${product.accentColor}, ${product.accentColor}dd)` }}>{product.category}</div>
               </div>
 
-              <div className="product-content">
-                <div>
-                  <h3 className="product-name">{product.name}</h3>
-                  <p className="product-description">{getProductDescription(product)}</p>
-                </div>
+              <div className="product-info">
+                <h3 className="product-name">{product.name}</h3>
+                <p className="product-description">{getProductDescription(product)}</p>
 
-                <div className="spec-list">
-                  <div className="spec-item">
-                    <span className="spec-icon">↗</span>
-                    <div>
-                      <strong>Range</strong>
-                      <span>{product.range}</span>
-                    </div>
+                <div className="product-stats-list">
+                  <div className="product-stat">
+                    <span className="product-stat-label">Range</span>
+                    <span className="product-stat-value">{product.range}</span>
                   </div>
-                  <div className="spec-item">
-                    <span className="spec-icon">⚡</span>
-                    <div>
-                      <strong>Top Speed</strong>
-                      <span>{product.topSpeed}</span>
-                    </div>
+                  <div className="product-stat">
+                    <span className="product-stat-label">Top Speed</span>
+                    <span className="product-stat-value">{product.topSpeed}</span>
                   </div>
-                  <div className="spec-item">
-                    <span className="spec-icon">🔋</span>
-                    <div>
-                      <strong>Battery</strong>
-                      <span>{product.battery}</span>
-                    </div>
+                  <div className="product-stat">
+                    <span className="product-stat-label">Battery</span>
+                    <span className="product-stat-value">{product.battery}</span>
                   </div>
-                  <div className="spec-item">
-                    <span className="spec-icon">⏱</span>
-                    <div>
-                      <strong>Charging</strong>
-                      <span>{product.chargingTime}</span>
-                    </div>
+                  <div className="product-stat">
+                    <span className="product-stat-label">Charging</span>
+                    <span className="product-stat-value">{product.chargingTime}</span>
                   </div>
                 </div>
 
-                <div className="product-action">
+                <div className="product-actions">
                   <Link to={`/products/${product.slug}`} className="btn-view">
                     View Details
                   </Link>

@@ -188,6 +188,13 @@
     grid-template-columns: 1fr;
   }
 
+  .dealership-content-card,
+  .support-copy,
+  .requirements-card,
+  .dealership-cta-card {
+    padding: 1.5rem;
+  }
+
   .benefit-grid,
   .steps-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -210,6 +217,11 @@
   .steps-grid,
   .stats-card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .dealership-media-card img,
+  .support-media-card img {
+    max-height: 280px;
   }
 
   .dealership-cta-card {

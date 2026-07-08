@@ -1,7 +1,7 @@
 .home-about-section,
 .featured-products,
 .home-contact-section {
-  padding: 5rem 2rem;
+  padding: clamp(3.5rem, 6vw, 5rem) clamp(1rem, 2.5vw, 2rem);
 }
 
 .home-about-section {
@@ -113,8 +113,8 @@
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .home-product-card {
@@ -248,26 +248,125 @@
   cursor: pointer;
 }
 
+@media (max-width: 1280px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1024px) {
   .home-about-grid,
   .home-contact-grid {
     grid-template-columns: 1fr;
   }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .home-about-section,
   .featured-products,
   .home-contact-section {
-    padding: 3rem 1rem;
+    padding: 3.2rem 1rem;
+  }
+
+  .home-about-grid,
+  .home-contact-grid {
+    gap: 1.4rem;
+  }
+
+  .home-about-image-card,
+  .home-contact-form-card,
+  .home-contact-details {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .home-about-image-card img {
+    min-height: 250px;
+  }
+
+  .home-about-content h2,
+  .home-contact-details h2 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+
+  .home-about-content p,
+  .home-contact-details p {
+    font-size: 0.95rem;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .home-product-card {
+    border-radius: 18px;
+  }
+
+  .product-card-image {
+    min-height: 220px;
+    padding: 0.9rem;
+  }
+
+  .product-card-content {
+    padding: 1rem;
+  }
+
+  .product-card-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .product-card-content p {
+    font-size: 0.94rem;
   }
 
   .home-form-row {
     grid-template-columns: 1fr;
   }
 
+  .home-read-more-btn,
+  .home-submit-btn,
+  .view-details-btn {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-about-section,
+  .featured-products,
+  .home-contact-section {
+    padding: 2.8rem 0.9rem;
+  }
+
   .home-about-content h2,
   .home-contact-details h2 {
-    font-size: 1.7rem;
+    font-size: 1.55rem;
+  }
+
+  .home-about-image-card img {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-about-section,
+  .featured-products,
+  .home-contact-section {
+    padding: 2.6rem 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .home-about-section,
+  .featured-products,
+  .home-contact-section {
+    padding: 2.4rem 0.7rem;
   }
 }

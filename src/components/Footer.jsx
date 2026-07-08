@@ -53,20 +53,39 @@ const Footer = () => {
 
           <div className="footer-section footer-contact">
             <h4>Contact Us</h4>
-            <ul className="contact-info">
-              <li>
+            <div className="contact-info">
+              <div className="address-item">
                 <span className="contact-icon">📍</span>
-                <span>A-33, Sector-5, Noida, UP-201301</span>
-              </li>
-              <li>
+                <div className="address-text">
+                  <span className="address-label">Address 1</span>
+                  <span>A-33, Sector-5,</span>
+                  <span>Noida, UP-201301,</span>
+                  <span>India</span>
+                </div>
+              </div>
+
+              <div className="address-item">
+                <span className="contact-icon">📍</span>
+                <div className="address-text">
+                  <span className="address-label">Address 2</span>
+                  <span>Beleghata Main Rd,</span>
+                  <span>Subhas Sarobar Park,</span>
+                  <span>Phoolbagan, Beleghata,</span>
+                  <span>Kolkata, West Bengal 700010,</span>
+                  <span>India</span>
+                </div>
+              </div>
+
+              <div className="contact-item">
                 <span className="contact-icon">📞</span>
                 <span>+91 98115 44858</span>
-              </li>
-              <li>
+              </div>
+
+              <div className="contact-item">
                 <span className="contact-icon">📧</span>
                 <span>aerovoltelectric@gmail.com</span>
-              </li>
-            </ul>
+              </div>
+            </div>
             <div className="footer-newsletter">
               <h5>Subscribe to Newsletter</h5>
               <form onSubmit={handleNewsletterSubmit} className="newsletter-form">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { products } from '../data';
@@ -10,10 +10,6 @@ const ProductDetail = () => {
   const product = products.find((p) => p.slug === slug);
   const [activeFaq, setActiveFaq] = useState(null);
   const [activeImage, setActiveImage] = useState(product?.image || '');
-
-  useEffect(() => {
-    setActiveImage(product?.image || '');
-  }, [product?.slug]);
 
   if (!product) {
     return (
@@ -34,7 +30,7 @@ const ProductDetail = () => {
       return base;
     }
 
-    return `${base} Designed for riders who expect premium comfort, intelligent technology, and dependable performance, this AeroVolt model brings elegant design, practical capability, and a refined everyday EV experience into one standout package.`;
+    return `${base} Crafted for riders who expect premium comfort, intelligent technology, and dependable performance, this AeroVolt model brings elegant design and practical everyday capability together in one high-impact EV experience.`;
   };
 
   const faqs = [
@@ -59,9 +55,9 @@ const ProductDetail = () => {
   const quickSpecs = [
     { icon: '🔋', label: 'Battery', value: product.battery },
     { icon: '⚡', label: 'Motor', value: product.motor },
-    { icon: '↗', label: 'Range', value: product.range },
+    { icon: '📏', label: 'Range', value: product.range },
     { icon: '🚀', label: 'Top Speed', value: product.topSpeed },
-    { icon: '⏱', label: 'Charging', value: product.chargingTime },
+    { icon: '🔌', label: 'Charging', value: product.chargingTime },
     { icon: '🛑', label: 'Brake', value: product.brakes },
   ];
 
@@ -70,31 +66,31 @@ const ProductDetail = () => {
     { label: 'Motor', value: product.motor },
     { label: 'Range', value: product.range },
     { label: 'Charging', value: product.chargingTime },
-    { label: 'Brakes', value: product.brakes },
-    { label: 'Tyres', value: product.tyres },
-    { label: 'Display', value: 'Digital Console' },
+    { label: 'Brake', value: product.brakes },
+    { label: 'Display', value: 'Digital' },
     { label: 'Controller', value: 'Smart Controller' },
     { label: 'Ground Clearance', value: '160 mm' },
+    { label: 'Tyre', value: product.tyres },
     { label: 'Suspension', value: 'Telescopic' },
-    { label: 'Load Capacity', value: '150 kg' },
+    { label: 'Load Capacity', value: '150kg' },
     { label: 'Warranty', value: product.warranty },
   ];
 
   const featureCards = (product.features || []).map((feature) => ({
     icon: '✓',
     title: feature,
-    description: 'Premium quality with cutting-edge EV technology',
+    description: 'Premium quality with cutting-edge technology',
   }));
 
   const galleryImages = product.gallery?.length ? product.gallery : [product.image];
 
   return (
     <div className="product-detail" style={{ '--accent-color': product.accentColor }}>
-      <PageBanner title={product.name} image={product.banner} scale={0.9} />
+      <PageBanner title={product.name} image={product.banner} />
 
       <section className="section hero-section">
         <div className="container">
-          <div className="detail-hero">
+          <div className="hero-grid">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -123,25 +119,22 @@ const ProductDetail = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="details-panel"
+              className="details-wrapper"
             >
               <p className="eyebrow">AeroVolt Electric Scooter</p>
-              <h1 className="detail-title">{product.name}</h1>
-              <p className="detail-description">{getExtendedDescription(product)}</p>
+              <h1 className="product-name">{product.name}</h1>
+              <p className="product-description">{getExtendedDescription(product)}</p>
 
-              <div className="quick-spec-grid">
+              <div className="specs-table">
                 {quickSpecs.map((spec, idx) => (
-                  <div key={idx} className="quick-spec-card">
-                    <span className="spec-icon">{spec.icon}</span>
-                    <div className="spec-info">
-                      <span className="spec-label">{spec.label}</span>
-                      <span className="spec-value">{spec.value}</span>
-                    </div>
+                  <div key={idx} className="spec-row">
+                    <span className="spec-label">{spec.label}</span>
+                    <span className="spec-value">{spec.value}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="cta-row">
+              <div className="cta-buttons">
                 <Link to="/enquiry" className="btn book-now-btn">
                   Book Test Ride
                 </Link>
@@ -164,7 +157,7 @@ const ProductDetail = () => {
           >
             Key Features
           </motion.h2>
-          <div className="feature-grid">
+          <div className="features-grid">
             {featureCards.map((feature, idx) => (
               <motion.div
                 key={idx}
@@ -187,11 +180,11 @@ const ProductDetail = () => {
       <section className="section specs-section">
         <div className="container">
           <h2 className="section-title">Technical Specifications</h2>
-          <div className="spec-table">
+          <div className="technical-specs-grid">
             {technicalSpecs.map((spec, idx) => (
-              <div key={idx} className="spec-row">
-                <span className="spec-label">{spec.label}</span>
-                <span className="spec-value">{spec.value}</span>
+              <div key={idx} className="technical-spec-card">
+                <div className="tech-spec-label">{spec.label}</div>
+                <div className="tech-spec-value">{spec.value}</div>
               </div>
             ))}
           </div>

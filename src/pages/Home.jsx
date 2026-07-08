@@ -7,7 +7,7 @@ import Technology from '../components/Technology';
 import WhyAeroVolt from '../components/WhyAeroVolt';
 import Gallery from '../components/Gallery';
 import { products } from '../data';
-import aboutImage from '../assets/Product/Chopper ZS.png';
+import aboutImage from '../assets/Product/Aero Chopper.png';
 import './Home.css';
 
 const featuredProductSlugs = [
@@ -184,7 +184,6 @@ const Home = () => {
             viewport={{ once: true }}
             className="home-contact-form-card"
           >
-            <h3>Send us a Message</h3>
             {success && <div className="success-message">✓ Thank you for your message! We will get back to you soon.</div>}
             {error && <div className="error-message">✗ {error}</div>}
             <form className="home-contact-form" onSubmit={handleSubmit}>

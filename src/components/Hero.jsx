@@ -29,10 +29,12 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={`${slide}-${index}`}>
             <div className="hero-slide">
-              <img 
-                src={slide} 
-                alt={`AeroVolt banner ${index + 1}`} 
+              <img
+                src={slide}
+                alt={`AeroVolt banner ${index + 1}`}
                 className="hero-slide-image"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
               />
             </div>
           </SwiperSlide>

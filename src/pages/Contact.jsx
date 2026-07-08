@@ -59,8 +59,8 @@ const Contact = () => {
               <div className="info-card">
                 <div className="info-icon">📍</div>
                 <div className="info-text">
-                  <h3>Address</h3>
-                  <p>A-33, Sector-5<br />Noida, UP-201301<br />India</p>
+                  <h3>2nd Factory</h3>
+                  <p>Beleghata Main Rd,<br />Subhas Sarobar Park, Phoolbagan,<br />Beleghata, Kolkata, West Bengal 700010<br />India</p>
                 </div>
               </div>
               <div className="info-card">
@@ -84,7 +84,7 @@ const Contact = () => {
               <div className="map-wrapper">
                 <iframe
                   title="AeroVolt Office"
-                  src="https://www.google.com/maps?q=Noida,%20UP&output=embed"
+                  src="https://www.google.com/maps?q=Beleghata%20Main%20Rd,%20Subhas%20Sarobar%20Park,%20Phoolbagan,%20Beleghata,%20Kolkata,%20West%20Bengal%20700010&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
@@ -93,7 +93,6 @@ const Contact = () => {
           </div>
 
           <div className="contact-card contact-form-card">
-            <h2>Send us a Message</h2>
             {success && <div className="success-message">✓ Thank you for your message! We will get back to you soon.</div>}
             {error && <div className="error-message">✗ {error}</div>}
             <form className="contact-form" onSubmit={handleSubmit}>

@@ -88,7 +88,7 @@
 }
 
 .tech-section-list {
-  padding: 1rem 2rem 4rem;
+  padding: 1rem clamp(1rem, 2.5vw, 2rem) 4rem;
 }
 
 .tech-feature-card {
@@ -203,6 +203,11 @@
     grid-template-columns: 1fr;
   }
 
+  .tech-content-card,
+  .tech-feature-copy {
+    padding: 1.6rem;
+  }
+
   .tech-feature-card.reverse .tech-feature-image,
   .tech-feature-card.reverse .tech-feature-copy {
     order: initial;
@@ -223,6 +228,12 @@
   .tech-section-list {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .tech-content-card,
+  .tech-feature-copy,
+  .tech-cta-card {
+    padding: 1.25rem;
   }
 
   .stats-grid,

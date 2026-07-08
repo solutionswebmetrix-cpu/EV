@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import banner3 from '../assets/banner 3.png';
-import overviewImage from '../assets/Product/Chopper ZS.png';
-import batteryImage from '../assets/Product/New Supreme.png';
-import motorImage from '../assets/Product/Supreme Pro.png';
-import chargingImage from '../assets/Product/New Fusion.png';
-import controllerImage from '../assets/Product/New Sprint.png';
-import safetyImage from '../assets/Product/Chopper.png';
+import overviewImage from '../assets/Product/Aero Chopper.png';
+import batteryImage from '../assets/Product/Aero Supreme.png';
+import motorImage from '../assets/Product/Aero Supreme Pro.png';
+import chargingImage from '../assets/Product/Aero Plus.png';
+import controllerImage from '../assets/Product/Aero Sprint.png';
+import safetyImage from '../assets/Product/Aero Chopper.png';
 import PageBanner from '../components/PageBanner';
 import './TechnologyPage.css';
 
