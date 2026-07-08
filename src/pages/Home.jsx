@@ -7,16 +7,18 @@ import Technology from '../components/Technology';
 import WhyAeroVolt from '../components/WhyAeroVolt';
 import Gallery from '../components/Gallery';
 import { products } from '../data';
-import aboutImage from '../assets/Product/Aero Chopper.png';
+import aboutImage from '../assets/Product/Aero Supreme Pro.png';
 import './Home.css';
 
 const featuredProductSlugs = [
-  'chopper-zs',
-  'chopper-zs-plus',
-  'supreme-pro',
-  'new-supreme',
-  'new-fusion',
-  'new-sprint'
+  'aero-chopper',
+  'aero-chopper-plus',
+  'aero-supreme-pro',
+  'aero-supreme',
+  'aero-supreme-plus',
+  'aero-plus',
+  'aero-chopper-lite',
+  'aero'
 ];
 
 const initialFormState = {

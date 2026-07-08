@@ -1,24 +1,24 @@
-import ChopperZS from './assets/Product/Aero Chopper.png';
-import ChopperZSBanner from './assets/Product/Aero Chopper banner.png';
-import ChopperZSPlus from './assets/Product/Aero Chopper Plus.png';
-import ChopperZSPlusBanner from './assets/Product/Aero Chopper Plus banner.png';
-import SupremePro from './assets/Product/Aero Supreme Pro.png';
-import SupremeProBanner from './assets/Product/Aero Supreme Pro banner.png';
-import NewSupreme from './assets/Product/Aero Supreme.png';
-import NewSupremeBanner from './assets/Product/Aero Supreme banner.png';
-import NewSupremePlus from './assets/Product/Aero Supreme Plus.png';
-import NewSupremePlusBanner from './assets/Product/Aero Supreme Plus banner.png';
-import NewFusion from './assets/Product/Aero Plus.png';
-import NewFusionBanner from './assets/Product/Aero Plus banner.png';
-import Chopper from './assets/Product/Aero Chopper.png';
-import ChopperBanner from './assets/Product/Aero Chopper banner.png';
-import NewSprint from './assets/Product/Aero Sprint.png';
-import NewSprintBanner from './assets/Product/Aero Sprint banner.png';
+import AeroChopperImage from './assets/Product/Aero Chopper.png';
+import AeroChopperBanner from './assets/Product/Aero Chopper banner.png';
+import AeroChopperLiteImage from './assets/Product/Aero Chopper Lite.png';
+import AeroChopperLiteBanner from './assets/Product/Aero Chopper Lite.png';
+import AeroChopperPlusImage from './assets/Product/Aero Chopper plus.png';
+import AeroChopperPlusBanner from './assets/Product/Aero Chopper Plus banner.png';
+import AeroSupremeProImage from './assets/Product/Aero Supreme Pro.png';
+import AeroSupremeProBanner from './assets/Product/Aero Supreme Pro banner.png';
+import AeroSupremeImage from './assets/Product/Aero Supreme.png';
+import AeroSupremeBanner from './assets/Product/Aero Supreme banner.png';
+import AeroSupremePlusImage from './assets/Product/Aero Supreme Plus.png';
+import AeroSupremePlusBanner from './assets/Product/Aero Supreme Plus banner.png';
+import AeroPlusImage from './assets/Product/Aero plus.png';
+import AeroPlusBanner from './assets/Product/Aero Plus banner.png';
+import AeroImage from './assets/Product/Aero .png';
+import AeroBanner from './assets/Product/Aero .png';
 
 export const products = [
   {
     id: 1,
-    slug: "chopper-zs",
+    slug: "aero-chopper",
     category: "High Speed Scooters",
     name: "Aero Chopper",
     shortDescription: "Premium electric scooter with strong performance, long-range battery, and modern features for confident daily commuting.",
@@ -33,14 +33,14 @@ export const products = [
     warranty: "3 Years",
     colors: ["#000000", "#ffffff", "#6B3CC9"],
     accentColor: "#6B3CC9",
-    image: ChopperZS,
-    banner: ChopperZSBanner,
-    gallery: [ChopperZS, ChopperZSPlus, SupremePro],
+    image: AeroChopperImage,
+    banner: AeroChopperBanner,
+    gallery: [AeroChopperImage, AeroChopperPlusImage, AeroSupremeProImage],
     features: ["LED Headlights", "Digital Display", "Anti-theft Alarm", "Reverse Mode"],
   },
   {
     id: 2,
-    slug: "chopper-zs-plus",
+    slug: "aero-chopper-plus",
     category: "High Speed Scooters",
     name: "Aero Chopper Plus",
     shortDescription: "High-speed scooter with upgraded power, extended range, and refined comfort for everyday adventure.",
@@ -55,14 +55,14 @@ export const products = [
     warranty: "3 Years",
     colors: ["#000000", "#87CEEB", "#ffffff"],
     accentColor: "#87CEEB",
-    image: ChopperZSPlus,
-    banner: ChopperZSPlusBanner,
-    gallery: [ChopperZSPlus, ChopperZS, SupremePro],
+    image: AeroChopperPlusImage,
+    banner: AeroChopperPlusBanner,
+    gallery: [AeroChopperPlusImage, AeroChopperImage, AeroSupremeProImage],
     features: ["LED Headlights", "Digital Display", "Anti-theft Alarm", "Reverse Mode", "Regenerative Braking"],
   },
   {
     id: 3,
-    slug: "supreme-pro",
+    slug: "aero-supreme-pro",
     category: "High Speed Scooters",
     name: "Aero Supreme Pro",
     shortDescription: "Flagship model with premium styling, advanced tech, and strong performance for riders seeking the best.",
@@ -77,14 +77,14 @@ export const products = [
     warranty: "3 Years",
     colors: ["#DC2626", "#000000", "#ffffff"],
     accentColor: "#DC2626",
-    image: SupremePro,
-    banner: SupremeProBanner,
-    gallery: [SupremePro, ChopperZSPlus, NewSupreme],
+    image: AeroSupremeProImage,
+    banner: AeroSupremeProBanner,
+    gallery: [AeroSupremeProImage, AeroChopperPlusImage, AeroSupremeImage],
     features: ["LED Headlights", "Digital Display", "Anti-theft Alarm", "Reverse Mode", "Regenerative Braking", "Smart Connect"],
   },
   {
     id: 4,
-    slug: "new-supreme",
+    slug: "aero-supreme",
     category: "High Speed Scooters",
     name: "Aero Supreme",
     shortDescription: "Reliable daily commuter with smart design, comfortable handling, and efficient everyday performance.",
@@ -99,14 +99,14 @@ export const products = [
     warranty: "2 Years",
     colors: ["#DC2626", "#000000", "#ffffff"],
     accentColor: "#DC2626",
-    image: NewSupreme,
-    banner: NewSupremeBanner,
-    gallery: [NewSupreme, SupremePro, ChopperZS],
+    image: AeroSupremeImage,
+    banner: AeroSupremeBanner,
+    gallery: [AeroSupremeImage, AeroSupremeProImage, AeroChopperImage],
     features: ["LED Headlights", "Digital Display", "Anti-theft Alarm"],
   },
   {
     id: 5,
-    slug: "new-supreme-plus",
+    slug: "aero-supreme-plus",
     category: "High Speed Scooters",
     name: "Aero Supreme Plus",
     shortDescription: "Enhanced commuter scooter with extra comfort, stronger range, and useful everyday features.",
@@ -121,14 +121,14 @@ export const products = [
     warranty: "3 Years",
     colors: ["#FFD700", "#000000", "#ffffff"],
     accentColor: "#FFD700",
-    image: NewSupremePlus,
-    banner: NewSupremePlusBanner,
-    gallery: [NewSupremePlus, SupremePro, ChopperZSPlus],
+    image: AeroSupremePlusImage,
+    banner: AeroSupremePlusBanner,
+    gallery: [AeroSupremePlusImage, AeroSupremeProImage, AeroChopperPlusImage],
     features: ["LED Headlights", "Digital Display", "Anti-theft Alarm", "Reverse Mode"],
   },
   {
     id: 6,
-    slug: "new-fusion",
+    slug: "aero-plus",
     category: "High Speed Scooters",
     name: "Aero Plus",
     shortDescription: "Stylish and efficient scooter designed for smart urban travel with dependable everyday performance.",
@@ -143,14 +143,14 @@ export const products = [
     warranty: "2 Years",
     colors: ["#C0C0C0", "#000000", "#ffffff"],
     accentColor: "#C0C0C0",
-    image: NewFusion,
-    banner: NewFusionBanner,
-    gallery: [NewFusion, NewSupreme, Chopper],
+    image: AeroPlusImage,
+    banner: AeroPlusBanner,
+    gallery: [AeroPlusImage, AeroSupremeImage, AeroChopperImage],
     features: ["LED Headlights", "Digital Display"],
   },
   {
     id: 7,
-    slug: "chopper",
+    slug: "aero-chopper-lite",
     category: "Low Speed Scooters",
     name: "Aero Chopper Lite",
     shortDescription: "Compact and efficient city scooter for short trips, errands, and everyday commuting.",
@@ -165,18 +165,18 @@ export const products = [
     warranty: "2 Years",
     colors: ["#F97316", "#000000", "#ffffff"],
     accentColor: "#F97316",
-    image: Chopper,
-    banner: ChopperBanner,
-    gallery: [Chopper, NewSprint, NewFusion],
+    image: AeroChopperLiteImage,
+    banner: AeroChopperLiteBanner,
+    gallery: [AeroChopperLiteImage, AeroChopperImage, AeroSupremeImage],
     features: ["LED Headlights", "Analog Display"],
   },
   {
     id: 8,
-    slug: "new-sprint",
+    slug: "aero",
     category: "Low Speed Scooters",
-    name: "Aero Sprint",
+    name: "Aero",
     shortDescription: "Agile and sporty low-speed scooter designed for quick urban rides with everyday practicality.",
-    description: "Aero Sprint offers a fun and efficient way to move around the city. With a 350W motor, 80 km range, and smart safety features, it is a reliable companion for daily errands and quick trips.",
+    description: "Aero offers a fun and efficient way to move around the city. With a 350W motor, 80 km range, and smart safety features, it is a reliable companion for daily errands and quick trips.",
     range: "80 km",
     topSpeed: "25 km/h",
     battery: "1.8 kWh Lithium-ion",
@@ -187,9 +187,9 @@ export const products = [
     warranty: "2 Years",
     colors: ["#DC2626", "#000000", "#ffffff"],
     accentColor: "#DC2626",
-    image: NewSprint,
-    banner: NewSprintBanner,
-    gallery: [NewSprint, Chopper, NewSupreme],
+    image: AeroImage,
+    banner: AeroBanner,
+    gallery: [AeroImage, AeroChopperImage, AeroSupremeImage],
     features: ["LED Headlights", "Digital Display", "Anti-theft Alarm"],
   },
 ];
@@ -220,12 +220,12 @@ export const whyAeroVolt = [
 ];
 
 export const galleryImages = [
-  { id: 1, url: ChopperZS, category: "scooters" },
-  { id: 2, url: ChopperZSPlus, category: "scooters" },
-  { id: 3, url: SupremePro, category: "scooters" },
-  { id: 4, url: NewSupreme, category: "scooters" },
-  { id: 5, url: NewSupremePlus, category: "scooters" },
-  { id: 6, url: NewFusion, category: "scooters" },
-  { id: 7, url: Chopper, category: "scooters" },
-  { id: 8, url: NewSprint, category: "scooters" },
+  { id: 1, url: AeroChopperImage, category: "scooters" },
+  { id: 2, url: AeroChopperPlusImage, category: "scooters" },
+  { id: 3, url: AeroSupremeProImage, category: "scooters" },
+  { id: 4, url: AeroSupremeImage, category: "scooters" },
+  { id: 5, url: AeroSupremePlusImage, category: "scooters" },
+  { id: 6, url: AeroPlusImage, category: "scooters" },
+  { id: 7, url: AeroChopperLiteImage, category: "scooters" },
+  { id: 8, url: AeroImage, category: "scooters" },
 ];

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import banner4 from '../assets/banner 4.png';
-import overviewImage from '../assets/Product/Aero Chopper Plus.png';
-import supportImage from '../assets/Product/Aero Supreme Plus.png';
+import overviewImage from '../assets/Product/Aero Chopper plus.png';
+import supportImage from '../assets/Product/Aero plus.png';
 import Dealership from '../components/Dealership';
 import PageBanner from '../components/PageBanner';
 import './DealershipPage.css';

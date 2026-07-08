@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import banner1 from '../assets/banner 1.png';
-import aboutProductImage from '../assets/Product/Aero Chopper.png';
+import aboutProductImage from '../assets/Product/Aero Supreme.png';
 import factoryImage from '../assets/Factory.jpeg';
 import PageBanner from '../components/PageBanner';
 import './About.css';
